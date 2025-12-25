@@ -1,4 +1,6 @@
 #!/bin/bash
+# SPDX-FileCopyrightText: 2025 Yuto Shibusawa
+# SPDX-License-Identifier: BSD-3-Clause
 # test.sh: csvcountコマンドのテストスクリプト
 
 # 期待される出力 (改行区切り)
