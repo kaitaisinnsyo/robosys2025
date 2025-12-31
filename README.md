@@ -2,8 +2,9 @@
 
 [![test](https://github.com/kaitaisinnsyo/robosys2025/actions/workflows/test.yml/badge.svg)](https://github.com/kaitaisinnsyo/robosys2025/actions/workflows/test.yml)
 
-本パッケージは、ROS 2を用いてPCのCPU使用率を定期的に取得し、トピックとして配信するものです。千葉工業大学 先進工学部 未来ロボティクス学科「ロボットシステム学」の第2回課題用として作成されました。
+本パッケージは、ROS 2を用いてPCのCPU使用率を定期的に取得し、トピックとして配信するものです。千葉工業大学 先進工学部 未来ロボティクス学科「ロボットシステム学」の第1回課題用として作成されました。
 
+本パッケージは、CPU使用率を計算し配信する `cpu_publisher` ノードのみで構成されており、シンプルで迷いのない設計となっています。
 ## 実行コマンド
 
 環境をセットアップ（ビルドおよび `source`）した後、以下のコマンドでノードを起動します。
