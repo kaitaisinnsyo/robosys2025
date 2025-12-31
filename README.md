@@ -1,25 +1,28 @@
-# robosys2025- csvstats
-muzukasi
-- このソフトウェアパッケージは，3条項BSDライセンスの下，再頒布および使用が許可されます．
-- このパッケージは，robosys2025由来のコード（© 2025 Ryuichi Ueda）を利用しています．
-- このパッケージのコードは，下記のスライド（CC-BY-SA 4.0 by Ryuichi Ueda）のものを，本人の許可を得て自身の著作としたものです．
-    - [ryuichiueda/my_slides robosys_2025](https://github.com/kaitaisinnsyo/robosys2025/actions/workflows/test.yml/badge.svg)
-- © 2025 Yuto Shibusawa
+# robosys2025: CPU使用率監視パッケージ
 
-このリポジトリは、千葉工業大学「ロボットシステム学」の第7回課題用です。CSVデータの特定の列から統計情報を算出するコマンドを提供します。
+[![test](https://github.com/kaitaisinnsyo/robosys2025/actions/workflows/test.yml/badge.svg)](https://github.com/kaitaisinnsyo/robosys2025/actions/workflows/test.yml)
 
-## 📊 csvstats コマンド
-標準入力からCSVデータを受け取り、指定された列の「合計」「平均」「最大」「最小」を計算してCSV形式で出力します。
+本パッケージは、ROS 2を用いてPCのCPU使用率を定期的に取得し、トピックとして配信するものです。千葉工業大学 先進工学部 未来ロボティクス学科「ロボットシステム学」の第2回課題用として作成されました。
 
-### 使い方
+## 実行コマンド
+
+環境をセットアップ（ビルドおよび `source`）した後、以下のコマンドでノードを起動します。
+
 ```bash
-$ cat <ファイル名> | python3 csvstats.py <列番号>
+ros2 run robosys2025 cpu_publisher
+動作確認環境
+OS: Ubuntu 24.04 LTS (WSL2)
 
-#### ソフトウェアとテスト環境
-必要なソフトウェア
-Python
+ROS 2 Version: Jazzy Jalisco
 
-テスト済みバージョン: 3.10, 3.12
+動作確認結果
+実行時、以下の通りCPU使用率が1秒ごとに配信されます。
 
-テスト環境
-Ubuntu 24.04 LTS
+Plaintext
+
+[INFO] [cpu_publisher]: Publishing: 1.9%
+[INFO] [cpu_publisher]: Publishing: 0.2%
+ライセンス
+このソフトウェアは BSD 3-Clause License の下で公開されています。
+
+© 2025 shibu0907
