@@ -15,17 +15,12 @@ setup(
     zip_safe=True,
     maintainer='shibu0907',
     maintainer_email='mdouga0907@gmail.com',
-    description='TODO: Package description',
-    license='TODO: License declaration',
-    extras_require={
-        'test': [
-            'pytest',
-        ],
-    },
+    description='CPU usage publisher for robosys2025',
+    license='BSD-3-Clause',
+    tests_require=['pytest'],
     entry_points={
         'console_scripts': [
             'cpu_publisher = robosys2025.cpu_publisher:main',
-            'load_alert = robosys2025.load_alert:main',
         ],
     },
 )
