@@ -2,8 +2,16 @@ name: test
 on: push
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-    - uses: actions/checkout@v3
-    - name: All test
-      run: bash -xv ./test.bash
+      - uses: actions/checkout@v4
+      - name: Install ROS 2
+        uses: ros-tooling/setup-ros@v0.7
+        with:
+          required-ros-distro: jazzy
+      - name: Build and Test
+        run: |
+          colcon build
+          source install/setup.bash
+          # 今回のノードが存在するかチェック
+          ros2 run robosys2025 cpu_publisher --help > /dev/null
