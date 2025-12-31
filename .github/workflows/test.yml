@@ -11,11 +11,11 @@ jobs:
           required-ros-distro: jazzy
       - name: Build
         run: |
-          # 依存関係をインストールし、ビルドする
+          # 依存関係をインストールしてビルド
           colcon build
       - name: Check package
         run: |
-          # ビルドした環境を読み込んでから、コマンドが存在するか確認する
-          source /opt/ros/jazzy/setup.bash
+          # ROS 2の環境を自動で読み込んでから実行
+          source /opt/ros/${{ env.ROS_DISTRO }}/setup.bash
           source install/setup.bash
           ros2 run robosys2025 cpu_publisher --help
