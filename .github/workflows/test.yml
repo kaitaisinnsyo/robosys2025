@@ -9,9 +9,13 @@ jobs:
         uses: ros-tooling/setup-ros@v0.7
         with:
           required-ros-distro: jazzy
-      - name: Build and Test
+      - name: Build
         run: |
+          # 依存関係をインストールし、ビルドする
           colcon build
+      - name: Check package
+        run: |
+          # ビルドした環境を読み込んでから、コマンドが存在するか確認する
+          source /opt/ros/jazzy/setup.bash
           source install/setup.bash
-          # 今回のノードが存在するかチェック
-          ros2 run robosys2025 cpu_publisher --help > /dev/null
+          ros2 run robosys2025 cpu_publisher --help
